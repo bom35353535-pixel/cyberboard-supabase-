@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
-// Environment variables or fallback defaults
-export const DEFAULT_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://ueadkluxuuqsmhzekpff.supabase.co';
-export const DEFAULT_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVlYWRrbHV4dXVxc21oemVrcGZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMjQ5MTMsImV4cCI6MjEwMzkwMDkxM30.VLwFsEifD1z-NQuKCkGmRMVJYfcwGnjbTZU3jbrYVFM';
+// Environment variables from Vite (.env or Vercel Environment Variables)
+export const DEFAULT_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || '';
+export const DEFAULT_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
 
 // LocalStorage Keys
 const STORAGE_URL_KEY = 'cyberboard_supabase_url';
@@ -53,17 +53,13 @@ export const resetSupabaseClient = () => {
 const INITIAL_DEMO_POSTS = [
   {
     id: 'demo-1',
-    title: '⚡ CyberBoard 2.0에 오신 것을 환영합니다! (Supabase 연동 완료)',
+    title: '⚡ CyberBoard 2.0에 오신 것을 환영합니다! (Supabase 연동 지원)',
     content: `안녕하세요 사이버네틱스 커뮤니티 여러분! 🚀
 
 본 사이트는 Supabase의 강력한 Realtime Database 기반으로 작동하는 초고속 소통 게시판입니다.
 
-### 🛠️ 사용자 Supabase 연동 정보:
-- **Project URL**: \`https://ueadkluxuuqsmhzekpff.supabase.co\`
-- **상태**: Supabase 서버 연동 준비 완료 🟢
-
-### ⚡ 1단계 DB 테이블 생성 가이드:
-상단 **[⚙️ Supabase 연동]** 버튼을 누르신 후 **[SQL 스키마 복사]** 탭에서 SQL을 복사하여 Supabase Dashboard의 **SQL Editor**에서 실행([Run])하시면 모든 기능이 사용자 DB로 즉시 저장됩니다!`,
+### 🛠️ 사용자 Supabase 연동 방법:
+상단 **[⚙️ Supabase 연동]** 버튼을 누르신 후 본인의 **Project URL**과 **Anon Key**를 입력하거나, **[SQL 스키마 복사]** 탭에서 SQL을 복사하여 Supabase Dashboard의 **SQL Editor**에서 실행([Run])하시면 라이브 데이터베이스로 동적 연동됩니다!`,
     category: '공지사항',
     tags: ['안내', 'Supabase', 'CyberBoard', '공지'],
     author_name: '관리자 (Admin)',
