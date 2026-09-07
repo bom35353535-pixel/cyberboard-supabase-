@@ -1,8 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
-// User provided Supabase Credentials
-export const DEFAULT_SUPABASE_URL = 'https://ueadkluxuuqsmhzekpff.supabase.co';
-export const DEFAULT_SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVlYWRrbHV4dXVxc21oemVrcGZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMjQ5MTMsImV4cCI6MjEwMzkwMDkxM30.VLwFsEifD1z-NQuKCkGmRMVJYfcwGnjbTZU3jbrYVFM';
+// Environment variables or fallback defaults
+export const DEFAULT_SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || 'https://ueadkluxuuqsmhzekpff.supabase.co';
+export const DEFAULT_SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVlYWRrbHV4dXVxc21oemVrcGZmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODgzMjQ5MTMsImV4cCI6MjEwMzkwMDkxM30.VLwFsEifD1z-NQuKCkGmRMVJYfcwGnjbTZU3jbrYVFM';
 
 // LocalStorage Keys
 const STORAGE_URL_KEY = 'cyberboard_supabase_url';
